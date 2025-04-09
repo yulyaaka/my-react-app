@@ -1,0 +1,14 @@
+ /*расположение текста*/
+.message {
+  display: flex;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* стили для текста */
+.message p {
+  font-weight: bold;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
