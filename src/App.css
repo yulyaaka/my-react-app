@@ -5,10 +5,10 @@
   padding: 20px;
 }
 
-/* стили для текста */
+/*стили для текста*/
 .message p {
   font-weight: bold;
   font-size: 24px;
-  color: #333;
+  color: #0a0a0a;
   text-align: center;
 }
