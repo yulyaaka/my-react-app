@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 
 export const Layout: React.FC = () => (
     return <>
@@ -6,4 +6,17 @@ export const Layout: React.FC = () => (
      <main>Main.tsx</main>
      <footer>Footer.tsx</footer>
     </>
-)
+)*/
+
+import React from "react"
+import {Footer} from "./Footer"
+import {Header} from "./Header"
+import {Main} from "./Main"
+
+export const Layout = (): React.ReactElement => {
+    return <>
+      <Header/>
+      <Main/>
+      <Footer/>
+    </>
+}
