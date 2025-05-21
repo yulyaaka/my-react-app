@@ -2,7 +2,7 @@ import React from "react";
 
 export const Main: React.FC=()=>{
     return (
-        <main className="page_content content">
+    <main className="page_content content">
     <section className="content_section main-block">
         <h1>Candidates with Creative & Engineering Backgrounds</h1>
         <p>This is the place to show yourself and land entry-level jobs at cutting-edge companies. Launch your career here.</p>
@@ -52,12 +52,11 @@ export const Main: React.FC=()=>{
                     <p>Senior Product Designer</p>
                     <p style={{fontSize: '10px'}}>Los Angeles,USA • Fulltime Freelancer.</p>
                   </div>
-                  <div className="button-container">
+                <div className="button-container">
                     <button className="custom-button">Figma</button>
                     <button className="custom-button">UI Design</button>
                     <button className="custom-button">UX Design</button>
                 </div>
-                
                 </div>
                 <div className="about">
                   <h3>About Me</h3>
@@ -66,9 +65,9 @@ export const Main: React.FC=()=>{
                       We are the company behind the wildly successful DIY channel 5-Minute Crafts, the inspirational and 
                       creative channel Bright Side.
                   </p>
-              </div>
+                </div>
              
-              <div className="portfolio">
+                <div className="portfolio">
                 <h3>Portfolio</h3>
                 <div className="image-row">
                     <img src="./src/assets/images/Frame 427320285.png" alt="" className="portfolio-image" />
@@ -76,7 +75,7 @@ export const Main: React.FC=()=>{
                     <img src="./src/assets/images/Frame 427320289.png" alt="" className="portfolio-image" />
                     
                 </div>
-                 <div className="content-window">
+                <div className="content-window">
                 <form>
                     <div className="form-group">
                         <label htmlFor="email"><i className="fas fa-envelope"></i>Email:</label>
@@ -93,7 +92,7 @@ export const Main: React.FC=()=>{
                         <button type="reset" className="secondary-button">Message</button>
                     </div>
                 </form>
-            </div>
+                </div>
             </div>
 
             <div className="work">
