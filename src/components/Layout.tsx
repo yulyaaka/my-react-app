@@ -8,15 +8,20 @@ export const Layout: React.FC = () => (
     </>
 )*/
 
-import React from "react"
-import {Footer} from "./Footer"
-import {Header} from "./Header"
-import {Main} from "./Main"
+import React from 'react';
+import { Header } from './Header';
+import { Main } from './Main';
+import { Footer } from './Footer';
 
-export const Layout = (): React.ReactElement => {
-    return <>
-      <Header/>
-      <Main/>
-      <Footer/>
+export const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+  return (
+    <>
+      <Header />
+      <Main>
+        {children}
+      </Main>
+      <Footer />
     </>
-}
+  );
+};
+

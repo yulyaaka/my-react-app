@@ -1,40 +1,8 @@
-import React from "react";
-/*
-export const Main: React.FC=()=>{
-    return (
-    <main className="page_content content">
-    <section className="content_section main-block">
-        <h1>Candidates with Creative & Engineering Backgrounds</h1>
-        <p>This is the place to show yourself and land entry-level jobs at cutting-edge companies. Launch your career here.</p>
-        <a href="#" className="button-primary">Join Now</a>
-        <p>Looking for candidates? <a href="#">Hire now</a></p>
-    </section>
-
-    <section className="main-image">
-      <div className="swiper mySwiper">
-        <div className="swiper-wrapper">
-          <div className="swiper-slide">
-            <img className="candidate-img" src="./src/assets/images/image1.png" />
-          </div>
-          <div className="swiper-slide">
-            <img className="candidate-img" src="./src/assets/images/pic1.png" />
-          </div>
-          <div className="swiper-slide">
-            <img className="candidate-img" src="./src/assets/images/image1.png" />
-          </div>
-          <div className="swiper-slide">
-            <img className="candidate-img" src="./src/assets/images/pic1.png" />
-          </div>
-          <div className="swiper-slide">
-            <img className="candidate-img" src="./src/assets/images/image1.png" />
-          </div>
-        </div>
-      </div>
-    </section>
-
+export const InfoSection: React.FC = () => {
+  return (
     <section className="content_section info">
-            <div className="container">
-              <div className="block block-1">
+      <div className="container">
+        <div className="block block-1">
                 <img src="./src/assets/images/image4.png" alt="Profile" width="100" height="100" />
                 <h2>Creating an Online Presence is Hard. Jobly Makes it Easy for Recruiters to See you</h2>
                 <p>Zhao Cui Founder at Jobly.co</p>
@@ -98,59 +66,7 @@ export const Main: React.FC=()=>{
             </div>
             </div>
             </div>
-            </div>
-  
+      </div>
     </section>
-
-
-
-  <div className="features-container">
-    <div className="features">
-      <div className="feature-card">
-        <h3>Professional Profile</h3>
-        <p>We know finding the right job is stressful, so we’ve made it simple. It only takes a few minutes. Create a free portfolio on briefolio to show your best self and get discovered by recruiter</p>
-      </div>
-      <div className="feature-card">
-        <h3>Best Portfolio</h3>
-        <p>We know finding the right job is stressful, so we’ve made it simple. It only takes a few minutes. Create a free portfolio on briefolio to show your best self and get discovered by recruiter</p>
-      </div>
-      <div className="feature-card">
-        <h3>Powerful Resume</h3>
-        <p>We know finding the right job is stressful, so we’ve made it simple. It only takes a few minutes. Create a free portfolio on briefolio to show your best self and get discovered by recruiter</p>
-      </div>
-    </div>
-  </div>
-      
-    <section className="content_section place">
-    <div className="section">
-    <div className="left">
-      <img src="./src/assets/images/image2.png" alt="Team working" />
-    </div>
-    <div className="right">
-      <h1>Connect With Recruiter</h1>
-      <p>Get instant access to a curated pool of top creative & tech talent actively seeking their next role. Find highly qualified job!</p>
-    </div>
-    </div>
-  
-  <div className="section dark-section">
-    <div className="left">
-      <h2>Set up your profile.Let jobs find you.</h2>
-      <a href="#" className="button">Join Now</a>
-    </div>
-    <div className="right">
-      <img src="./src/assets/images/image3.png" alt="People working" />
-    </div>
-  </div>  
-    </section>
-</main>
-    );
-};
-*/
-
-export const Main: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
-  return (
-    <main className="page_content content">
-      {children}
-    </main>
   );
 };

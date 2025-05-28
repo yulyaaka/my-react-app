@@ -15,15 +15,29 @@ function App() {
 export default App;
 */
 
-import React from 'react';
-import { Layout } from './components/Layout';
+/*
+  export const App = observer ((): React.ReactElement => {
+    const { isLoading: isAppLoading } = StoreMobx;
 
-  export const App = (): React.ReactElement => {
  /* const [theme, setTheme] = useState<string>('')*/
 
+
+import React from 'react';
+import { Layout } from './components/Layout';
+import { HeroSection } from './components/HeroSection';
+import { ImageSlider } from './components/ImageSlider';
+import { InfoSection } from './components/InfoSection';
+import { FeaturesSection } from './components/FeaturesSection';
+import { CallToAction } from './components/CallToAction';
+
+const App: React.FC = () => {
   return (
-    <>
-      <Layout />
-    </>
-  )
-}
+      <Layout>
+        <HeroSection />
+        <ImageSlider />
+        <InfoSection />
+        <FeaturesSection />
+        <CallToAction />
+      </Layout>
+  );
+};
