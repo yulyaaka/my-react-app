@@ -21,7 +21,7 @@ export default App;
 
  /* const [theme, setTheme] = useState<string>('')*/
 
-
+// src/App.tsx
 import React from 'react';
 import { Layout } from './components/Layout';
 import { HeroSection } from './components/HeroSection';
@@ -30,14 +30,16 @@ import { InfoSection } from './components/InfoSection';
 import { FeaturesSection } from './components/FeaturesSection';
 import { CallToAction } from './components/CallToAction';
 
-const App: React.FC = () => {
+const App = () => {
   return (
-      <Layout>
-        <HeroSection />
-        <ImageSlider />
-        <InfoSection />
-        <FeaturesSection />
-        <CallToAction />
-      </Layout>
+    <Layout>
+      <HeroSection />
+      <ImageSlider />
+      <InfoSection />
+      <FeaturesSection />
+      <CallToAction />
+    </Layout>
   );
 };
+
+export default App;

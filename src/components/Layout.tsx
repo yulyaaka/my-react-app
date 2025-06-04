@@ -8,6 +8,30 @@ export const Layout: React.FC = () => (
     </>
 )*/
 
+
+
+/*
+import React from 'react';
+import { Header } from './Header';
+import { Main } from './Main';
+import { Footer } from './Footer';
+
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export const Layout = ({ children }: LayoutProps) => {
+  return (
+    <>
+      <Header />
+      <Main />
+      <main>{children}</main>
+      <Footer />
+    </>
+  );
+};
+*/
+
 import React from 'react';
 import { Header } from './Header';
 import { Main } from './Main';
@@ -24,4 +48,3 @@ export const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) =
     </>
   );
 };
-
