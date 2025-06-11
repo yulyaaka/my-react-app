@@ -29,3 +29,7 @@ const Card: React.FC<CardProps> = ({ comment, isActive = false, onClick }) => {
 };
 
 export default Card;
+
+
+
+
