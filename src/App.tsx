@@ -20,6 +20,7 @@ export default App;
     const { isLoading: isAppLoading } = StoreMobx;
 
  /* const [theme, setTheme] = useState<string>('')*/
+
 import React, { useEffect, useState } from 'react';
 import { Layout } from './components/Layout';
 import { HeroSection } from './components/HeroSection';
@@ -40,6 +41,7 @@ interface Comment {
 const App: React.FC = () => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/comments?_limit=3')
@@ -47,15 +49,20 @@ const App: React.FC = () => {
       .then((data: Comment[]) => {
         setComments(data);
         setActiveIndex(0);
-      });
+        setIsLoading(false);
+      })
+      .catch(() => setIsLoading(false));
   }, []);
+
+  if (isLoading) return <div>Loading...</div>;
+  if (comments.length === 0) return <div>No cards found</div>;
 
   return (
     <Layout>
       <HeroSection />
       <ImageSlider />
       <InfoSection />
-      <div className="features-container">
+      <div className="features-container" style={{ display: 'flex', gap: '20px', padding: '20px' }}>
         {comments.map((comment, index) => (
           <Card
             key={comment.id}

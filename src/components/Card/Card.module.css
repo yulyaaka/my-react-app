@@ -1,22 +1,22 @@
-/* src/components/Card/Card.module.css */
-
-.featureCard {
-  padding: 20px;
-  border: 1px solid #ccc;
-  margin: 10px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 300px;
+  transition: all 0.3s ease;
 }
 
-.featureCard:hover {
-  border-color: #007bff;
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .active {
-  background-color: #f0f8ff;
-  border-color: #007bff;
+  border-color: #646cff;
+  background-color: #f0f0ff;
 }
 
 .email {
-  color: #555;
+  color: #666;
+  font-size: 0.9em;
+  margin: 8px 0;
 }
