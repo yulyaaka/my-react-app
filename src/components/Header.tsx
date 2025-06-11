@@ -1,46 +1,62 @@
-import React from "react";
-import '/src/assets/styles/header.css'
+// src/components/Header/Header.tsx
+import React, { useState } from 'react';
+import Modal from './Modal/Modal.tsx';
 
-export const Header: React.FC=()=>{
-    return (
+export const Header: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
     <header className="page_header header">
-    <div>
+      <div>
         <h2>Jobly</h2>
-    </div>
-    <nav className="header_nav nav">
-        <ul className="nav_list">
-            <li className="nav_item">For Recruiters</li>
-            <li className="nav_item">
-                <button onClick={() => document.getElementById('id01').style.display = 'block'} className="signup-btn">
-                    Sign Up
-                </button>
-            </li>
-            <li className="nav_item">Log In</li>
-        </ul>
-    </nav>
-    <div className="modal">
-  
-        <div className="container">
-          <label htmlFor="uname">Имя пользователя</label>
-          <input type="text" placeholder="Введите имя пользователя" name="uname" required/>
-    
-          <label htmlFor="psw"><b>Пароль</b></label>
-          <input type="password" placeholder=" Ведите пароль" name="psw" required/>
-          
-          <label><input type="checkbox" checked={false} name="remember"/> Запомнить меня </label>
-    </div>
-    
-        <div className="container"> 
-          <button type="button" onClick={() => document.getElementById('id01').style.display= 'none'} className="cancelbtn">
-          Отменить
-          </button>
-          <span className="psw">Забыли пароль?</span>
-        </div>
-    </div>
+      </div>
 
-    {/*<div className="preloader">
-      <div className="spinner"></div>
-    </div>*/}
+      <nav className="header_nav nav">
+        <ul className="nav_list">
+          <li className="nav_item">For Recruiters</li>
+          <li className="nav_item">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="signup-btn"
+            >
+              Sign Up
+            </button>
+          </li>
+          <li className="nav_item">Log In</li>
+        </ul>
+      </nav>
+
+      {/* Модальное окно */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h2>Авторизация</h2>
+        <form>
+          <div style={{ marginBottom: '10px' }}>
+            <label>
+              Email:
+              <input
+                type="email"
+                placeholder="example@example.com"
+                required
+                style={{ marginLeft: '10px' }}
+              />
+            </label>
+          </div>
+          <div style={{ marginBottom: '10px' }}>
+            <label>
+              Пароль:
+              <input
+                type="password"
+                placeholder="••••••••"
+                required
+                style={{ marginLeft: '10px' }}
+              />
+            </label>
+          </div>
+          <button type="submit">Войти</button>
+        </form>
+      </Modal>
     </header>
-    );
+  );
 };
+
+export default Header;

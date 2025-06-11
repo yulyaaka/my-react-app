@@ -20,31 +20,15 @@ export default App;
     const { isLoading: isAppLoading } = StoreMobx;
 
  /* const [theme, setTheme] = useState<string>('')*/
-
-// src/App.tsx
+import React, { useEffect, useState } from 'react';
 import { Layout } from './components/Layout';
 import { HeroSection } from './components/HeroSection';
 import { ImageSlider } from './components/ImageSlider';
 import { InfoSection } from './components/InfoSection';
-import { FeaturesSection } from './components/FeaturesSection';
 import { CallToAction } from './components/CallToAction';
-
-const App = () => {
-  return (
-    <Layout>
-      <HeroSection />
-      <ImageSlider />
-      <InfoSection />
-      <FeaturesSection />
-      <CallToAction />
-    </Layout>
-  );
-};
-
-
-// src/App.tsx
-import React, { useEffect, useState } from 'react';
 import Card from './components/Card/Card';
+import Modal from './components/Modal/Modal';
+import Header from './components/Header'; 
 
 interface Comment {
   id: number;
@@ -62,23 +46,28 @@ const App: React.FC = () => {
       .then((res) => res.json())
       .then((data: Comment[]) => {
         setComments(data);
-        setActiveIndex(0); // активируем первую карточку по умолчанию
+        setActiveIndex(0);
       });
   }, []);
 
   return (
-    <div className="features-container">
-      {comments.map((comment, index) => (
-        <Card
-          key={comment.id}
-          comment={comment}
-          isActive={activeIndex === index}
-          onClick={() => setActiveIndex(index)}
-        />
-      ))}
-    </div>
+    <Layout>
+      <HeroSection />
+      <ImageSlider />
+      <InfoSection />
+      <div className="features-container">
+        {comments.map((comment, index) => (
+          <Card
+            key={comment.id}
+            comment={comment}
+            isActive={activeIndex === index}
+            onClick={() => setActiveIndex(index)}
+          />
+        ))}
+      </div>
+      <CallToAction />
+    </Layout>
   );
 };
-
 
 export default App;
