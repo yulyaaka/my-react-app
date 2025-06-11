@@ -184,3 +184,40 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+
+
+
+
+
+
+/*
+
+// src/App.tsx
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+// Layout и общие компоненты
+import { Layout } from './components/Layout';
+
+// Страницы
+import HomePage from './pages/HomePage';
+import CardsPage from './pages/CardsPage'; // Исправлено: было PostPage
+import NotFoundPage from './pages/NotFoundPage';
+
+const App: React.FC = () => {
+  return (
+    <Layout>
+      <Routes>
+        <Route index element={<HomePage />} />
+        <Route path="/cards" element={<CardsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Layout>
+  );
+};
+
+export default App;
+*/
+
+
