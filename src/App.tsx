@@ -21,6 +21,10 @@ export default App;
 
  /* const [theme, setTheme] = useState<string>('')*/
 
+
+
+
+/*
 import React, { useEffect, useState } from 'react';
 import { Layout } from './components/Layout';
 import { HeroSection } from './components/HeroSection';
@@ -30,6 +34,8 @@ import { CallToAction } from './components/CallToAction';
 import Card from './components/Card/Card';
 import Modal from './components/Modal/Modal';
 import Header from './components/Header'; 
+import CardList from './components/CardList/CardList';
+
 
 interface Comment {
   id: number;
@@ -57,21 +63,38 @@ const App: React.FC = () => {
   if (isLoading) return <div>Loading...</div>;
   if (comments.length === 0) return <div>No cards found</div>;
 
+return (
+  <Layout>
+    <HeroSection />
+    <ImageSlider />
+    <InfoSection />
+    <CardList />
+    <CallToAction />
+  </Layout>
+);
+
+};
+
+export default App;
+*/
+
+
+// src/App.tsx
+import React from 'react';
+import { Layout } from './components/Layout';
+import { HeroSection } from './components/HeroSection';
+import { ImageSlider } from './components/ImageSlider';
+import { InfoSection } from './components/InfoSection';
+import { CallToAction } from './components/CallToAction';
+import CardList from './components/CardList/CardList';
+
+const App: React.FC = () => {
   return (
     <Layout>
       <HeroSection />
       <ImageSlider />
       <InfoSection />
-      <div className="features-container" style={{ display: 'flex', gap: '20px', padding: '20px' }}>
-        {comments.map((comment, index) => (
-          <Card
-            key={comment.id}
-            comment={comment}
-            isActive={activeIndex === index}
-            onClick={() => setActiveIndex(index)}
-          />
-        ))}
-      </div>
+      <CardList />
       <CallToAction />
     </Layout>
   );

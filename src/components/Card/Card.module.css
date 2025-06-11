@@ -2,7 +2,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 16px;
-  width: 300px;
+  width: 100px;
   transition: all 0.3s ease;
 }
 
@@ -19,4 +19,12 @@
   color: #666;
   font-size: 0.9em;
   margin: 8px 0;
+}
+.featureCard{
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 300px;
+  transition: all 0.3s ease;
+  margin-left:100px;
 }
