@@ -22,7 +22,6 @@ export default App;
  /* const [theme, setTheme] = useState<string>('')*/
 
 // src/App.tsx
-import React from 'react';
 import { Layout } from './components/Layout';
 import { HeroSection } from './components/HeroSection';
 import { ImageSlider } from './components/ImageSlider';
@@ -41,5 +40,45 @@ const App = () => {
     </Layout>
   );
 };
+
+
+// src/App.tsx
+import React, { useEffect, useState } from 'react';
+import Card from './components/Card/Card';
+
+interface Comment {
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
+
+const App: React.FC = () => {
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/comments?_limit=3')
+      .then((res) => res.json())
+      .then((data: Comment[]) => {
+        setComments(data);
+        setActiveIndex(0); // активируем первую карточку по умолчанию
+      });
+  }, []);
+
+  return (
+    <div className="features-container">
+      {comments.map((comment, index) => (
+        <Card
+          key={comment.id}
+          comment={comment}
+          isActive={activeIndex === index}
+          onClick={() => setActiveIndex(index)}
+        />
+      ))}
+    </div>
+  );
+};
+
 
 export default App;
