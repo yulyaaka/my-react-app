@@ -106,7 +106,7 @@ export default App;
 
 
 
-
+/*
 
 import React, { useEffect, useState } from 'react';
 import { Layout } from './components/Layout';
@@ -159,3 +159,28 @@ return (
 };
 
 export default App; 
+*/
+
+
+// src/App.tsx
+import React from 'react';
+import { Layout } from './components/Layout';
+import { HeroSection } from './components/HeroSection';
+import { ImageSlider } from './components/ImageSlider';
+import { InfoSection } from './components/InfoSection';
+import { CallToAction } from './components/CallToAction';
+import CardList from './components/CardList/CardList';
+
+const App: React.FC = () => {
+  return (
+    <Layout>
+      <HeroSection />
+      <ImageSlider />
+      <InfoSection />
+      <CardList />
+      <CallToAction />
+    </Layout>
+  );
+};
+
+export default App;
