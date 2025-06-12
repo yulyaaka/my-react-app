@@ -31,7 +31,7 @@ export const Layout = ({ children }: LayoutProps) => {
   );
 };
 */
-
+/*
 import React from 'react';
 import { Header } from './Header';
 import { Main } from './Main';
@@ -48,3 +48,42 @@ export const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) =
     </>
   );
 };
+*/
+/*
+// src/components/Layout.tsx
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import { Header } from './Header';
+import { Main } from './Main';
+import { Footer } from './Footer';
+
+export const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+  return (
+    <>
+      <Header />
+      <Main>{children ?? <Outlet />}</Main>
+      <Footer />
+    </>
+  );
+};
+*/
+// src/components/Layout.tsx
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import { Header } from './Header';
+import { Main } from './Main';
+import { Footer } from './Footer';
+
+const Layout: React.FC = () => {
+  return (
+    <>
+      <Header />
+      <Main>
+        <Outlet />
+      </Main>
+      <Footer />
+    </>
+  );
+};
+
+export default Layout;

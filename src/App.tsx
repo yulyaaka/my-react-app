@@ -161,7 +161,7 @@ return (
 export default App; 
 */
 
-
+/*
 // src/App.tsx
 import React from 'react';
 import { Layout } from './components/Layout';
@@ -184,7 +184,7 @@ const App: React.FC = () => {
 };
 
 export default App;
-
+*/
 
 
 
@@ -192,28 +192,25 @@ export default App;
 
 
 /*
-
-// src/App.tsx
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-// Layout и общие компоненты
-import { Layout } from './components/Layout';
-
-// Страницы
+import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
-import CardsPage from './pages/CardsPage'; // Исправлено: было PostPage
+import CardsPage from './pages/CardsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const App: React.FC = () => {
   return (
-    <Layout>
+    <BrowserRouter>
       <Routes>
-        <Route index element={<HomePage />} />
-        <Route path="/cards" element={<CardsPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="cards" element={<CardsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
       </Routes>
-    </Layout>
+    </BrowserRouter>
   );
 };
 
@@ -221,3 +218,29 @@ export default App;
 */
 
 
+
+
+// src/App.tsx
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Layout from './components/Layout';
+import HomePage from './pages/HomePage';
+import CardsPage from './pages/CardsPage';
+import NotFoundPage from './pages/NotFoundPage';
+
+const App: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="cards" element={<CardsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
