@@ -60,9 +60,11 @@ const CardList: React.FC = () => {
 
 export default CardList;
 */
-import React, { useEffect, useState } from 'react';
+
+
+import React, { useState } from 'react';
 import Card from '../Card/Card';
-import { fallbackComments } from '../fallbackComments';
+import { useComments } from '../hooks/useComments';
 
 interface Comment {
   id: number;
@@ -71,45 +73,16 @@ interface Comment {
   body: string;
 }
 
-// Типизация пропсов
 interface CardListProps {
-  limit?: number; // делаем необязательным, чтобы можно было использовать без limit
+  limit?: number;
 }
 
 const CardList: React.FC<CardListProps> = ({ limit = 10 }) => {
-  const [comments, setComments] = useState<Comment[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`https://jsonplaceholder.typicode.com/comments?_limit=${limit}`);
-
-        if (!response.ok) {
-          console.warn('API не отвечает, используем локальные данные');
-          setComments(fallbackComments);
-          setIsLoading(false);
-          setActiveIndex(0);
-          return;
-        }
-
-        const data: Comment[] = await response.json();
-        setComments(data);
-        setIsLoading(false);
-        setActiveIndex(0);
-      } catch (error) {
-        console.error('Ошибка загрузки с сервера:', error);
-        setComments(fallbackComments);
-        setIsLoading(false);
-        setActiveIndex(0);
-      }
-    };
-
-    fetchData();
-  }, [limit]); // зависимость от limit
+  const { comments, isLoading, error } = useComments(limit);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   if (isLoading) return <div>Загрузка...</div>;
+  if (error) return <div>Ошибка: {error}</div>;
 
   return (
     <div className="card-list" style={{ display: 'flex', gap: '20px', padding: '20px' }}>
