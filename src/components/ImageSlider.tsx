@@ -9,7 +9,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
 export const ImageSlider: React.FC = () => {
-  // Данные для слайдов (можно вынести в отдельный файл или получать через API)
   const slides = [
     { id: 1, image: './src/assets/images/image1.png', alt: 'Candidate 1' },
     { id: 2, image: './src/assets/images/pic1.png', alt: 'Candidate 2' },
@@ -38,7 +37,7 @@ export const ImageSlider: React.FC = () => {
                 src={slide.image} 
                 alt={slide.alt}
               />
-              {/* Можно добавить дополнительный контент для каждой карточки */}
+
               <div className="slide-info">
                 <h3>Candidate {slide.id}</h3>
                 <p>Some information about the candidate</p>

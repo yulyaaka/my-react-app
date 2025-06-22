@@ -1,5 +1,7 @@
 import React from "react";
 import '/src/assets/styles/footer.css'
+import '/src/assets/styles/header.css'
+import '/src/assets/styles/main.css'
 
 export const Footer: React.FC=()=>{
     return (

@@ -2,7 +2,7 @@
 border: 1px solid #ddd;
 border-radius: 8px;
 padding: 16px;
-width: 300px;
+width: 100px;
 transition: all 0.3s ease;
 }
 
@@ -28,3 +28,66 @@ margin: 8px 0;
   transition: all 0.3s ease;
   margin-left:100px;
 }
+
+.card-list{
+  width: 100px;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+    /* Мобильные устройства */
+    .card{
+              width: 100%;
+        max-width: 300px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    } .featureCard {
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .featureCard {
+        margin-left: auto !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Планшеты */
+    .card{
+              width: calc(50% - 20px);
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 10px;
+        margin-right: 10px;
+    } .featureCard {
+        width: calc(50% - 20px);
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 1025px) {
+    /* Десктоп */
+    .card{
+
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 20px;
+        margin-right: 50px;
+    }.featureCard {
+        width: 295px;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 20px;
+        margin-right: 50px;
+    }
+    
+    .featureCard {
+        margin-left: 60px !important;
+    }
+  }

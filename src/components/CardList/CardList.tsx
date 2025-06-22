@@ -85,7 +85,7 @@ const CardList: React.FC<CardListProps> = ({ limit = 10 }) => {
   if (error) return <div>Ошибка: {error}</div>;
 
   return (
-    <div className="card-list" style={{ display: 'flex', gap: '20px', padding: '20px' }}>
+    <div className="card-list" >
       {comments.map((comment, index) => (
         <Card
           key={comment.id}

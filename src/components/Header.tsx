@@ -167,10 +167,10 @@ export const Header: React.FC = () => {
             </button>
           </li>
           <li className="nav_item">
-            <Link to="/cards">Cards</Link>
+            <Link to="/cards" style={{ textDecoration: 'none' }}>Cards</Link>
           </li>
           <li className="nav_item">
-            <Link to="/about">About us</Link>
+            <Link to="/about" style={{ textDecoration: 'none' }}>About us</Link>
           </li>
           <li className="nav_item">Log In</li>
         </ul>
